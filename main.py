@@ -11,12 +11,14 @@ password = "pythondbpassword"
 db_name = "pythondb"
 
 ID = 1
+conn
 
 def connect_to_db():
+    global conn
     conn = pymysql.connect(rds_host, user=name, passwd=password, db=db_name, connect_timeout=5)
 
 def save_entry(entry):
-    
+    global conn
     with conn.cursor() as cur:
         cur.execute("""insert into test (id, name) values( %s, '%s')""" % (entry['id'], entry['name']))
         conn.commit()
@@ -24,7 +26,7 @@ def save_entry(entry):
         
 
 def add_entry():
-
+    global ID
     name = input("Enter name: ")
     entry = {
         "id": ID,
@@ -36,7 +38,7 @@ def add_entry():
     print ("Entry saved")
 
 def get_entry_by_name():
-
+    global conn
     result = []
     search = input("Enter name: ")
 
@@ -50,7 +52,7 @@ def get_entry_by_name():
         print (result)
 
 def get_all_entries():
-
+    global conn
     result = []
 
     with conn.cursor() as cur:
@@ -63,6 +65,7 @@ def get_all_entries():
         print (result)
 
 def get_entry_by_id():
+    global conn
     input = input("Enter id: ")
 
     with conn.cursor() as cur:
@@ -76,7 +79,7 @@ def get_entry_by_id():
         return input
 
 def update_entry():
-
+    global conn
     input = get_entry_by_id()
     id_to_update = int(input)
     
@@ -93,6 +96,7 @@ def update_entry():
 
 
 def delete_entry():
+    global conn
     input = get_entry_by_id()
     id_to_delete = int(input)
 
