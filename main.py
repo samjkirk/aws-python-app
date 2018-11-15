@@ -73,7 +73,7 @@ def get_entry_by_id(conn):
         return userInput
 
 def update_entry(conn):
-    userInput = get_entry_by_id()
+    userInput = get_entry_by_id(conn)
     id_to_update = int(userInput)
     
     confirm = input("Is this the entry you want to update? (Y/N)")
@@ -89,7 +89,7 @@ def update_entry(conn):
 
 
 def delete_entry(conn):
-    userInput = get_entry_by_id()
+    userInput = get_entry_by_id(conn)
     id_to_delete = int(userInput)
 
     confirm = input("Is this the entry you want to delete? (Y/N)")
