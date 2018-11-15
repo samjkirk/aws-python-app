@@ -63,17 +63,17 @@ def get_all_entries():
 
 def get_entry_by_id():
     global conn
-    input = input("Enter id: ")
+    userInput = input("Enter id: ")
 
     with conn.cursor() as cur:
-        cur.execute("""select id, name from test where id = %s""" % (input))
+        cur.execute("""select id, name from test where id = %s""" % (userInput))
         conn.commit()
         cur.close()
         for row in cur:
             result.append(list(row))
         print ("Selected results...")
         print (result)
-        return input
+        return userInput
 
 def update_entry():
     global conn
