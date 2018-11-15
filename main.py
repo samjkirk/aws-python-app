@@ -62,6 +62,7 @@ def get_all_entries():
         print (result)
 
 def get_entry_by_id():
+    result =[]
     global conn
     userInput = input("Enter id: ")
 
