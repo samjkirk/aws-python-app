@@ -5,7 +5,7 @@ import sys
 
 REGION = 'eu-west-2b'
 
-rds_host  = "mypythondb.cis1povvszqc.eu-west-2.rds.amazonaws.com"
+rds_host  = "pythondb.cxoycka02hiu.eu-west-2.rds.amazonaws.com"
 name = "admin"
 password = "password"
 db_name = "pythondb"
@@ -13,11 +13,10 @@ db_name = "pythondb"
 conn = None
 
 def connect_to_db():
-    global conn
     conn = pymysql.connect(rds_host, user=name, passwd=password, db=db_name, connect_timeout=5)
+    return conn
 
-def save_entry(entry):
-    global conn
+def save_entry(entry, conn):
     with conn.cursor() as cur:
         cur.execute("""create table if not exists test (id INT NOT NULL AUTO_INCREMENT, PRIMARY KEY(id), name VARCHAR(64));""")
         cur.execute("""insert into test  (name) values('%s')""" % (entry['name']))
@@ -25,17 +24,16 @@ def save_entry(entry):
         cur.close()
         
 
-def add_entry():
+def add_entry(conn):
     name = input("Enter name: ")
     entry = {
         "name": name
         }
     context = ""
-    save_entry(entry)
+    save_entry(entry, conn)
     print ("Entry saved")
 
-def get_entry_by_name():
-    global conn
+def get_entry_by_name(conn):
     result = []
     search = input("Enter name: ")
 
@@ -48,8 +46,7 @@ def get_entry_by_name():
         print ("Results...")
         print (result)
 
-def get_all_entries():
-    global conn
+def get_all_entries(conn):
     result = []
 
     with conn.cursor() as cur:
@@ -61,9 +58,8 @@ def get_all_entries():
         print ("Results...")
         print (result)
 
-def get_entry_by_id():
+def get_entry_by_id(conn):
     result =[]
-    global conn
     userInput = input("Enter id: ")
 
     with conn.cursor() as cur:
@@ -76,8 +72,7 @@ def get_entry_by_id():
         print (result)
         return userInput
 
-def update_entry():
-    global conn
+def update_entry(conn):
     userInput = get_entry_by_id()
     id_to_update = int(userInput)
     
@@ -93,8 +88,7 @@ def update_entry():
         print ("Selected entry will not be updated")
 
 
-def delete_entry():
-    global conn
+def delete_entry(conn):
     userInput = get_entry_by_id()
     id_to_delete = int(userInput)
 
@@ -109,13 +103,13 @@ def delete_entry():
         print ("Selected entry will not be deleted")
 
 def main():
-    connect_to_db()
-    add_entry()
-    add_entry()
-    add_entry()
-    get_all_entries()
-    update_entry()
-    delete_entry()
+    conn = connect_to_db()
+    add_entry(conn)
+    add_entry(conn)
+    add_entry(conn)
+    get_all_entries(conn)
+    update_entry(conn)
+    delete_entry(conn)
 
 
 if __name__ == "__main__":
