@@ -112,6 +112,7 @@ def main():
     add_entry()
     add_entry()
     add_entry()
+    get_all_entries()
 
 
 if __name__ == "__main__":
