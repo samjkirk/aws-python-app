@@ -19,7 +19,6 @@ def save_entry(entry):
     
     with conn.cursor() as cur:
         cur.execute("""insert into test (id, name) values( %s, '%s')""" % (entry['id'], entry['name']))
-        cur.execute("""select * from test""")
         conn.commit()
         cur.close()
         
