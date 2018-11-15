@@ -6,8 +6,8 @@ import sys
 REGION = 'eu-west-2b'
 
 rds_host  = "pythondb.cxoycka02hiu.eu-west-2.rds.amazonaws.com"
-name = "pythondb"
-password = "pythondbpassword"
+name = "admin"
+password = "password"
 db_name = "pythondb"
 
 conn = None
