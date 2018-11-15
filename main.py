@@ -109,3 +109,10 @@ def delete_entry():
 
 def main():
     connect_to_db()
+    add_entry()
+    add_entry()
+    add_entry()
+
+
+if __name__ == "__main__":
+    main()
