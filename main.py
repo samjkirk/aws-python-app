@@ -117,6 +117,8 @@ def main():
     add_entry()
     add_entry()
     get_all_entries()
+    update_entry()
+    delete_entry()
 
 
 if __name__ == "__main__":
