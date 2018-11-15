@@ -20,7 +20,7 @@ def connect_to_db():
 def save_entry(entry):
     global conn
     with conn.cursor() as cur:
-        cur.execute("""create table if not exists test (id INT NOT NULL AUTO INCREMENT, PRIMARY KEY(id), name VARCHAR(64));""")
+        cur.execute("""create table if not exists test (id INT NOT NULL AUTO_INCREMENT, PRIMARY KEY(id), name VARCHAR(64));""")
         cur.execute("""insert into test (id, name) values( %s, '%s')""" % (entry['id'], entry['name']))
         conn.commit()
         cur.close()
