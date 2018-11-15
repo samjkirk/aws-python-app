@@ -78,8 +78,8 @@ def get_entry_by_id():
 
 def update_entry():
     global conn
-    input = get_entry_by_id()
-    id_to_update = int(input)
+    userInput = get_entry_by_id()
+    id_to_update = int(userInput)
     
     confirm = input("Is this the entry you want to update? (Y/N)")
     if confirm == "Y":
@@ -95,8 +95,8 @@ def update_entry():
 
 def delete_entry():
     global conn
-    input = get_entry_by_id()
-    id_to_delete = int(input)
+    userInput = get_entry_by_id()
+    id_to_delete = int(userInput)
 
     confirm = input("Is this the entry you want to delete? (Y/N)")
     if confirm == "Y":
