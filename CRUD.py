@@ -65,7 +65,7 @@ def update_entry(conn):
     
     confirm = input(Constants.CONFIRM_UPDATE)
     if confirm == "Y":
-        name = input(Consttants.UPDATE)
+        name = input(Constants.UPDATE)
 
         with conn.cursor() as cur:
             cur.execute(Constants.UPDATE_SELECTED_ENTRY % (name, id_to_update))
