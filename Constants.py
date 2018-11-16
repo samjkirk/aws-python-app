@@ -1,4 +1,4 @@
-# DB CONNECTION
+# CHANGE THESE VARIABLES TO THE DETAILS OF YOUR RDS INSTANCE:
 RDS_HOST = "pythondb.cxoycka02hiu.eu-west-2.rds.amazonaws.com"
 REGION = 'eu-west-2b'
 USER_NAME = "admin"

@@ -13,12 +13,8 @@ def save_entry(entry, conn):
 
 def add_entry(conn):
     name = input(Constants.ENTER_NAME)
-    entry = {
-        "name": name
-        }
-    context = ""
-    save_entry(entry, conn)
-    print (Constants.ENTRY_SAVED)
+    entry = {"name": name}
+    save_entry(entry, conn); print (Constants.ENTRY_SAVED)
 
 def get_entry_by_name(conn):
     result = []
@@ -30,8 +26,7 @@ def get_entry_by_name(conn):
         cur.close()
         for row in cur:
             result.append(list(row))
-        print (Constants.RESULTS)
-        print (result)
+        print (Constants.RESULTS); print (result)
 
 def get_all_entries(conn):
     result = []
@@ -42,8 +37,7 @@ def get_all_entries(conn):
         cur.close()
         for row in cur:
             result.append(list(row))
-        print (Constants.RESULTS)
-        print (result)
+        print (Constants.RESULTS); print (result)
 
 def get_entry_by_id(conn):
     result =[]
@@ -55,8 +49,7 @@ def get_entry_by_id(conn):
         cur.close()
         for row in cur:
             result.append(list(row))
-        print (Constants.RESULTS)
-        print (result)
+        print (Constants.RESULTS); print (result)
         return userInput
 
 def update_entry(conn):
@@ -66,7 +59,6 @@ def update_entry(conn):
     confirm = input(Constants.CONFIRM_UPDATE)
     if confirm == "Y":
         name = input(Constants.UPDATE)
-
         with conn.cursor() as cur:
             cur.execute(Constants.UPDATE_SELECTED_ENTRY % (name, id_to_update))
             conn.commit()
@@ -81,11 +73,12 @@ def delete_entry(conn):
 
     confirm = input(Constants.CONFIRM_DELETE)
     if confirm == "Y":
-
         with conn.cursor() as cur:
             cur.execute(Constants.DELETE_SELECTED_ENTRY % (id_to_delete))
             conn.commit()
             cur.close()
     elif confirm == "N":
         print (Constants.CANCEL_DELETE)
+    else:
+        print ("Please enter either 'Y' or 'N': ")
         
