@@ -83,7 +83,7 @@ def delete_entry(conn):
     if confirm == "Y":
 
         with conn.cursor() as cur:
-            cur.execute(Constants.DELEETE_SELECTED_ENTRY % (id_to_delete))
+            cur.execute(Constants.DELETE_SELECTED_ENTRY % (id_to_delete))
             conn.commit()
             cur.close()
     elif confirm == "N":
