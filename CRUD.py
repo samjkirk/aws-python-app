@@ -79,7 +79,7 @@ def delete_entry(conn):
     userInput = get_entry_by_id(conn)
     id_to_delete = int(userInput)
 
-    confirm = input(Constants.CONFRIM_DELETE)
+    confirm = input(Constants.CONFIRM_DELETE)
     if confirm == "Y":
 
         with conn.cursor() as cur:
