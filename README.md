@@ -1,6 +1,6 @@
 # aws-python-app
 
-**A MORE UP TO DATE VERSION OF THIS REPO IS AVAILABLE AT THIS LINK https://github.com/GeorgeT94**
+**A MORE UP TO DATE VERSION OF THIS REPO IS AVAILABLE AT THIS LINK https://github.com/GeorgeT94/aws-python-app**
 
 This is a simple command line CRUD application hosted on AWS. It stores a 'name' attribute and an automatically generated ID. Users are able to add, update, delete, and view DB entries.
 
