@@ -13,7 +13,7 @@ def selector(selection, conn):
         CRUD.add_entry(conn)
     elif selection == Constants.DELETE:
         CRUD.delete_entry(conn)
-    elif selection == Constants.UPDATE:
+    elif selection == Constants.EDIT:
         CRUD.update_entry(conn)
     elif selection == Constants.VIEW:
         CRUD.get_all_entries(conn)

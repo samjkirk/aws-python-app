@@ -19,7 +19,7 @@ MENU_PROMPT = "Please enter add/delete/update/view or exit:"
 ADD = "add"
 EXIT = "exit"
 DELETE = "delete"
-UPDATE = "update"
+EDIT = "update"
 VIEW = "view"
 
 # MISC
