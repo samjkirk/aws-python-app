@@ -17,7 +17,7 @@ You must have a an RDS & EC2 instance set up in the same VPC.
 
 ### Running the program
 
-1. SSH into your EC2 instance...
+1. SSH into your EC2 instance. (GitBash has a built in SSH protocol)
 ```
 ssh -i "the-location-of-your-ec2-pem-file.pem" ubuntu@your-ubuntu-instance
 ```
