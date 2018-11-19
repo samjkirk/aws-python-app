@@ -9,7 +9,7 @@ def select_action(conn):
     selector(action, conn)
     
 def selector(selection, conn):
-    if selection == Constants.ADD:
+    if selection   == Constants.ADD:
         CRUD.add_entry(conn)
     elif selection == Constants.DELETE:
         CRUD.delete_entry(conn)
