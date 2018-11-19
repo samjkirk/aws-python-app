@@ -35,3 +35,9 @@ nano Constants.py
 ```
 python3 main.py
 ```
+If you run into any problems it is most likely due to the secruity setting on your RDS/EC2 instance.
+
+###### Contributors
+
+Sam Kirk  - https://github.com/samjkirk 
+George Timbrell - https://github.com/GeorgeT94
