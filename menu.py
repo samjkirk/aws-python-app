@@ -1,21 +1,23 @@
 #!/usr/bin/env python
 
 import CRUD
+import sys
+import Constants.Constants
 
 def select_action(conn):
-    action = input("Please enter add/delete/update/view:")
+    action = input(Constants.MENU_PROMPT)
     selector(action, conn)
     
 def selector(selection, conn):
-    if selection == "add":
+    if selection == Constants.ADD:
         CRUD.add_entry(conn)
-    elif selection =="delete":
+    elif selection == Constants.DELETE:
         CRUD.delete_entry(conn)
-    elif selection =="update":
+    elif selection == Constants.UPDATE:
         CRUD.update_entry(conn)
-    elif selection =="view":
+    elif selection == Constants.VIEW:
         CRUD.get_all_entries(conn)
+    elif selection == Constants.EXIT:
+        sys.exit()
     else:
         select_action(conn)
-        
-    

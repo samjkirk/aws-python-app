@@ -14,6 +14,14 @@ GET_ENTRY_BY_ID = """select id, name from test where id = %s"""
 UPDATE_SELECTED_ENTRY = """update test set name='%s' where id = %s"""
 DELETE_SELECTED_ENTRY = """delete from test where id = %s"""
 
+# MENU
+MENU_PROMPT = "Please enter add/delete/update/view or exit:"
+ADD = "add"
+EXIT = "exit"
+DELETE = "delete"
+UPDATE = "update"
+VIEW = "view"
+
 # MISC
 RESULTS = "Results..."
 ENTER_NAME = "Enter name: "
@@ -24,3 +32,4 @@ CONFIRM_UPDATE = "Is this the entry you want to update? (Y/N)"
 CONFIRM_DELETE = "Is this the entry you want to delete? (Y/N)"
 CANCEL_UPDATE = "Selected entry will not be updated"
 CANCEL_DELETE = "Selected entry will not be deleted"
+
