@@ -5,7 +5,6 @@ import sys
 import Constants
 
 REGION = Constants.REGION
-
 rds_host  = Constants.RDS_HOST
 name = Constants.USER_NAME
 password = Constants.PASSWORD

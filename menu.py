@@ -2,7 +2,7 @@
 
 import CRUD
 import sys
-import Constants.Constants
+import Constants
 
 def select_action(conn):
     action = input(Constants.MENU_PROMPT)
